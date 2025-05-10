@@ -1,0 +1,60 @@
+Units are in ms (millisecond)!
+
+Singly Linked List
+create: 0.0405, 0.043, 0.044692
+read: 0.061115, 0.111077, 0.0545
+update: 0.002070, 0.002346, 0.002808
+delete: 0.007269
+
+Doubly Linked List
+create: 0.066924, 0.079577, 0.0755
+read: 0.069269, 0.068769, 0.074539
+update: 0.002231, 0.001884, 0.002231
+delete: 0.006577
+
+Circular Singly Linked List
+(similar to Singly Linked List - tail connects to head)
+
+Circular Doubly Linked List
+(similar to Doubly Linked List - tail connects to head and vice versa)
+
+Array Stack
+push: 0.01927, 0.022038, 0.018923
+displayAll: 0.061385
+pop: 0.081308, 0.085923, 0.065153
+
+Linked List Stack
+push: 0.004346, 0.142, 0.0055
+displayAll: 0.079192
+pop: 0.0625, 0.059654, 0.069115
+
+Queue
+enqueue: 3.12269, 0.006116, 0.006154
+displayAll: 0.133962
+dequeue: 0.087153, 0.070307, 0.052654
+
+Min Heap
+insert: 0.015692, 0.023115, 0.019885
+displayAll: 0.080693
+
+Max Heap
+insert: 0.016538, 0.018692, 0.0235
+displayAll: 0.086346
+
+Graph
+addEdge: 0.0315, 0.039692, 0.028115
+displayAll: 0.171769
+
+Tree
+insert: 0.006885, 0.005769, 0.007269
+displayAll: 0.088693
+
+Algorithm
+size = 7
+Sorting: 0.00488
+
+size = 7
+Searching:
+First Element: 0.124654
+Last Element: 0.082307
+Random: 0.066385
