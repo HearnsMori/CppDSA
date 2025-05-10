@@ -327,3 +327,38 @@ Records are inside the record.txt file
 - Small variations are expected due to CPU scheduling, memory allocation, or caching effects.  
 - Circular linked list structures were not benchmarked separately but behave similarly to their linear counterparts.  
 - These results reflect **relative speed trends**, not absolute real-world performance under all conditions.
+
+## Valgrind (Memory Leak Benchmarking)
+The whole valgrind output results are inside the valgrind.txt
+
+### Valgrind Installation
+
+```console
+sudo apt-get install valgrind
+```
+
+Then run the program with valgrind
+```console
+valgrind --leak-check=full ./myprogram
+```
+
+### Valgrind Output Summary
+
+#### Issues Detected:
+1. **Conditional jump or move depends on uninitialised value(s):**
+   - Triggered during memory operations in the linker (`linker64`).
+   - Uninitialised stack value created in `normalize_path`.
+
+2. **Use of uninitialised value:**
+   - Detected in `memcpy` and `assign` functions, caused by uninitialized stack value in `normalize_path`.
+
+#### Memory Leak Summary:
+- **Definitely lost:** 360 bytes in 20 blocks.
+- **Indirectly lost:** 32 bytes in 2 blocks.
+- **Possibly lost:** 31 bytes in 1 block.
+- **Still reachable:** 2,288 bytes in 7 blocks.
+- **Suppressed:** 0 bytes.
+
+#### Recommendations:
+- Address uninitialized values, particularly in `normalize_path`, and review memory management to avoid leaks.
+- Rerun with `--leak-check=full --show-leak-kinds=all` to identify all potential issues.
